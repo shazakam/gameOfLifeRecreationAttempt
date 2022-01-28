@@ -10,18 +10,18 @@ Currently, there is a major flaw in the manner in which the program decides whet
 The problem being that it does not do it simultaneously and instead checks each block one by one and thus, doesn't accuratley represent the actual game.
 The solution which I plan implementing is instead of going through the grid array and checking one by one, is to create a recursive function which is triggered when a blue block is found. The Pseudocode would be as follows-ish:
 
-  Iterate through the grid array:
-    if a blue block is found:
-      Fcall the recursive function with the blue block as input with array position
+    Iterate through the grid array:
+      if a blue block is found:
+        Call the recursive function with the blue block as input with array position
       
-  recursive function:
-    if block is blue:
-      check conditions for continued life or deletion and save answer in a variable
-      Then call function on surrounding blocks
-    else:
-      check conditions for creation of life
-      if condition does not pass:
-        return
+      Recursive function:
+      if block is blue:
+        check conditions for continued life or deletion and save answer in a variable
+        Then call function on surrounding blocks
+          else:
+            check conditions for creation of life
+          if condition does not pass:
+            return
         
       else:
         save result in a variable
