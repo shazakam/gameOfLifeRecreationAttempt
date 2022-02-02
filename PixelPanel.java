@@ -10,6 +10,9 @@ public class PixelPanel extends JPanel {
 
         private static final int PIXEL_SIZE = 20;
 
+        public int row_position;
+        public int col_position;
+
         private Color backgroundColor;
 
         public PixelPanel() {

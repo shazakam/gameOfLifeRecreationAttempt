@@ -12,13 +12,17 @@ public class ColorListener extends MouseAdapter {
 
     @Override
     public void mousePressed(MouseEvent event) {
+        int row_position = panel.row_position;
+        int col_position = panel.col_position;
 
         if (event.getButton() == MouseEvent.BUTTON1) {
             panel.setBackgroundColor(Color.BLUE);
-            
+            gameBoard.pixelPanelArrayCopy[row_position][col_position] = 1;
             panel.repaint();
-        } else if (event.getButton() == MouseEvent.BUTTON3) {
+        } 
+        else if (event.getButton() == MouseEvent.BUTTON3) {
             panel.setBackgroundColor(Color.WHITE);
+            gameBoard.pixelPanelArrayCopy[row_position][col_position] = 0;
             panel.repaint();
         } 
     }

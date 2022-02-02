@@ -1,24 +1,19 @@
-
-import java.awt.EventQueue;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.Color;
+
 
 
 public class gameBoard implements Runnable {
     static int width = 40;
     static int height = 20;
     public static PixelPanel[][] pixelPanelArray = new PixelPanel[height][width];
+    public static int[][] pixelPanelArrayCopy = new int[height][width];
     private JFrame frame;
 
     public static void main(String[] args) {
         gameBoard game = new gameBoard();
         game.initGUI();
-
-       
-        //pixelPanelArray[4][7].setBackgroundColor(Color.BLUE);
-        //pixelPanelArray[4][7].repaint();
     }
 
     @Override
@@ -73,6 +68,8 @@ public class gameBoard implements Runnable {
                 PixelPanel pixelPanel = new PixelPanel();
                 pixelPanel.addMouseListener(new ColorListener(pixelPanel));
                 panel.add(pixelPanel);
+                pixelPanel.row_position = row;
+                pixelPanel.col_position = column;
                 pixelPanelArray[row][column] = pixelPanel;
                 
             }
